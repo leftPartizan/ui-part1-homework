@@ -51,18 +51,16 @@ class OrdinatorBehavior(){
 
     fun getCapitalTextStart() = getCapitalText(startCapital)
 
-    fun getFellingTextStart() = "отношение к вам " + getFelling(fellingState) + " ($fellingState)"
+    fun getFellingTextStart() = "отношение к вам ${getFelling(fellingState)} ($fellingState)"
 
     fun getFellingText(money: Int, state: Int) : String{
         val newState = getNewState(money,state)
-        return "отношение к вам " + getFelling(newState) + " ($newState)"
+        return "отношение к вам ${getFelling(newState)} ($newState)"
     }
 
     // служит для извлечения числового значения из строк состояния ординатора
     fun getStateIntFromView(text : String): Int {
         return text.filter { it.isDigit() }.toInt()
     }
-
-
 
 }
